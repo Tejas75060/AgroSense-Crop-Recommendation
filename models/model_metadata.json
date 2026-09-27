@@ -1,0 +1,362 @@
+{
+  "project_title": "AgroSense: An Intelligent Soil & Climate-Driven Precision Crop Recommendation System",
+  "group_id": "GROUP 15",
+  "features": [
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "ph",
+    "rainfall"
+  ],
+  "classes": [
+    "apple",
+    "banana",
+    "blackgram",
+    "chickpea",
+    "coconut",
+    "coffee",
+    "cotton",
+    "grapes",
+    "jute",
+    "kidneybeans",
+    "lentil",
+    "maize",
+    "mango",
+    "mothbeans",
+    "mungbean",
+    "muskmelon",
+    "orange",
+    "papaya",
+    "pigeonpeas",
+    "pomegranate",
+    "rice",
+    "watermelon"
+  ],
+  "num_classes": 22,
+  "feature_ranges": {
+    "N": {
+      "min": 0.0,
+      "max": 140.0,
+      "mean": 50.551818181818184,
+      "std": 36.9173338337566,
+      "q25": 21.0,
+      "q50": 37.0,
+      "q75": 84.25
+    },
+    "P": {
+      "min": 5.0,
+      "max": 145.0,
+      "mean": 53.36272727272727,
+      "std": 32.98588273858715,
+      "q25": 28.0,
+      "q50": 51.0,
+      "q75": 68.0
+    },
+    "K": {
+      "min": 5.0,
+      "max": 205.0,
+      "mean": 48.14909090909091,
+      "std": 50.64793054666013,
+      "q25": 20.0,
+      "q50": 32.0,
+      "q75": 49.0
+    },
+    "temperature": {
+      "min": 8.825674745,
+      "max": 43.67549305,
+      "mean": 25.616243851779544,
+      "std": 5.063748599958843,
+      "q25": 22.7693746325,
+      "q50": 25.5986932,
+      "q75": 28.5616539325
+    },
+    "humidity": {
+      "min": 14.25803981,
+      "max": 99.98187601,
+      "mean": 71.48177921778637,
+      "std": 22.263811589761083,
+      "q25": 60.2619528025,
+      "q50": 80.473145665,
+      "q75": 89.948770755
+    },
+    "ph": {
+      "min": 3.504752314,
+      "max": 9.93509073,
+      "mean": 6.469480065256364,
+      "std": 0.7739376880298733,
+      "q25": 5.97169279925,
+      "q50": 6.42504527,
+      "q75": 6.923642621250002
+    },
+    "rainfall": {
+      "min": 20.21126747,
+      "max": 298.5601175,
+      "mean": 103.46365541576817,
+      "std": 54.95838852487813,
+      "q25": 64.55168599999999,
+      "q50": 94.86762427,
+      "q75": 124.2675078
+    }
+  },
+  "best_model_name": "Random Forest",
+  "best_model_accuracy": 0.9954545454545455,
+  "best_model_f1": 0.9954517027687759,
+  "best_model_cv_mean": 0.9954545454545455,
+  "model_comparison": [
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.9954545454545455,
+      "Precision (Weighted)": 0.9956709956709956,
+      "Recall (Weighted)": 0.9954545454545455,
+      "F1-Score (Weighted)": 0.9954517027687759,
+      "Precision (Macro)": 0.9956709956709957,
+      "Recall (Macro)": 0.9954545454545454,
+      "F1-Score (Macro)": 0.9954517027687758,
+      "5-Fold CV Mean": 0.9954545454545455,
+      "5-Fold CV Std": 0.0032141217326661065
+    },
+    {
+      "Model": "Gaussian Naive Bayes",
+      "Accuracy": 0.9954545454545455,
+      "Precision (Weighted)": 0.9958677685950413,
+      "Recall (Weighted)": 0.9954545454545455,
+      "F1-Score (Weighted)": 0.9954431533378901,
+      "Precision (Macro)": 0.9958677685950413,
+      "Recall (Macro)": 0.9954545454545454,
+      "F1-Score (Macro)": 0.9954431533378901,
+      "5-Fold CV Mean": 0.9945454545454545,
+      "5-Fold CV Std": 0.0018181818181818132
+    },
+    {
+      "Model": "Support Vector Machine (RBF)",
+      "Accuracy": 0.9886363636363636,
+      "Precision (Weighted)": 0.9895710350255805,
+      "Recall (Weighted)": 0.9886363636363636,
+      "F1-Score (Weighted)": 0.9886735002267738,
+      "Precision (Macro)": 0.9895710350255804,
+      "Recall (Macro)": 0.9886363636363634,
+      "F1-Score (Macro)": 0.9886735002267737,
+      "5-Fold CV Mean": 0.9881818181818183,
+      "5-Fold CV Std": 0.003636363636363624
+    },
+    {
+      "Model": "Decision Tree",
+      "Accuracy": 0.9795454545454545,
+      "Precision (Weighted)": 0.9805981896890988,
+      "Recall (Weighted)": 0.9795454545454545,
+      "F1-Score (Weighted)": 0.979423151374371,
+      "Precision (Macro)": 0.9805981896890987,
+      "Recall (Macro)": 0.9795454545454546,
+      "F1-Score (Macro)": 0.9794231513743707,
+      "5-Fold CV Mean": 0.9877272727272727,
+      "5-Fold CV Std": 0.006833316535624036
+    },
+    {
+      "Model": "K-Nearest Neighbors",
+      "Accuracy": 0.9795454545454545,
+      "Precision (Weighted)": 0.9803555030827759,
+      "Recall (Weighted)": 0.9795454545454545,
+      "F1-Score (Weighted)": 0.9792832328133997,
+      "Precision (Macro)": 0.9803555030827759,
+      "Recall (Macro)": 0.9795454545454544,
+      "F1-Score (Macro)": 0.9792832328133997,
+      "5-Fold CV Mean": 0.9713636363636363,
+      "5-Fold CV Std": 0.006833316535624032
+    }
+  ],
+  "feature_importance": [
+    {
+      "Feature": "rainfall",
+      "Random Forest Importance": 0.23018422574659111,
+      "Decision Tree Importance": 0.3543239255755382
+    },
+    {
+      "Feature": "humidity",
+      "Random Forest Importance": 0.22422658789267352,
+      "Decision Tree Importance": 0.1492581771365269
+    },
+    {
+      "Feature": "K",
+      "Random Forest Importance": 0.1753925654245519,
+      "Decision Tree Importance": 0.11084559196716338
+    },
+    {
+      "Feature": "P",
+      "Random Forest Importance": 0.15084986670735417,
+      "Decision Tree Importance": 0.22496188873914175
+    },
+    {
+      "Feature": "N",
+      "Random Forest Importance": 0.09636333302406673,
+      "Decision Tree Importance": 0.0988300225623261
+    },
+    {
+      "Feature": "temperature",
+      "Random Forest Importance": 0.07237530192534172,
+      "Decision Tree Importance": 0.05437651500358251
+    },
+    {
+      "Feature": "ph",
+      "Random Forest Importance": 0.050608119279420875,
+      "Decision Tree Importance": 0.007403879015721118
+    }
+  ],
+  "crop_profiles": {
+    "apple": {
+      "season": "Kharif/Rabi (Temperate)",
+      "water": "Moderate",
+      "soil": "Well-drained loam",
+      "ph": "5.5 - 6.5",
+      "desc": "High economic value temperate fruit; requires chilling hours and high potassium."
+    },
+    "banana": {
+      "season": "All Year (Tropical)",
+      "water": "High",
+      "soil": "Rich loamy soil",
+      "ph": "6.0 - 7.5",
+      "desc": "Fast-growing fruit requiring warm tropical climate, high humidity, and nitrogen."
+    },
+    "blackgram": {
+      "season": "Kharif",
+      "water": "Low to Moderate",
+      "soil": "Loamy/Sandy loam",
+      "ph": "6.5 - 7.8",
+      "desc": "Nitrogen-fixing pulse crop; enriches soil fertility and tolerates modest drought."
+    },
+    "chickpea": {
+      "season": "Rabi",
+      "water": "Low",
+      "soil": "Sandy loam/Clay",
+      "ph": "6.0 - 8.0",
+      "desc": "Cool-season legume requiring dry climate, moderate phosphorus, and minimal water."
+    },
+    "coconut": {
+      "season": "Perennial (Coastal)",
+      "water": "High",
+      "soil": "Coastal alluvium/Laterite",
+      "ph": "5.2 - 8.0",
+      "desc": "Perennial plantation crop thriving in warm humid coasts with consistent rainfall."
+    },
+    "coffee": {
+      "season": "Perennial (Hilly)",
+      "water": "High",
+      "soil": "Deep, fertile volcanic loam",
+      "ph": "6.0 - 6.5",
+      "desc": "Cash crop grown at elevated altitudes with shaded canopy, high rainfall, and cool temps."
+    },
+    "cotton": {
+      "season": "Kharif",
+      "water": "Moderate",
+      "soil": "Deep black cotton soil (Regur)",
+      "ph": "6.0 - 8.0",
+      "desc": "Major fiber cash crop requiring warm climate, moderate moisture, and sunny days."
+    },
+    "grapes": {
+      "season": "Rabi/Summer",
+      "water": "Moderate",
+      "soil": "Sandy loam to clay loam",
+      "ph": "6.5 - 7.5",
+      "desc": "High-value fruit demanding very high potassium (K) and phosphorus (P) nutrition."
+    },
+    "jute": {
+      "season": "Kharif",
+      "water": "Very High",
+      "soil": "Alluvial river basin",
+      "ph": "6.0 - 7.5",
+      "desc": "Natural golden fiber flourishing in warm humid river deltas with heavy monsoon rainfall."
+    },
+    "kidneybeans": {
+      "season": "Kharif",
+      "water": "Moderate",
+      "soil": "Rich organic loam",
+      "ph": "5.5 - 6.5",
+      "desc": "High protein pulse needing temperate warmth and moderate moisture levels."
+    },
+    "lentil": {
+      "season": "Rabi",
+      "water": "Low",
+      "soil": "Well-drained alluvium",
+      "ph": "6.0 - 7.5",
+      "desc": "Hardy winter pulse with low water requirement; fixes atmospheric nitrogen."
+    },
+    "maize": {
+      "season": "Kharif/Rabi",
+      "water": "Moderate",
+      "soil": "Well-drained alluvium",
+      "ph": "5.8 - 7.2",
+      "desc": "Versatile cereal staple demanding substantial nitrogen and balanced sunshine."
+    },
+    "mango": {
+      "season": "Perennial (Tropical)",
+      "water": "Moderate",
+      "soil": "Deep alluvial/Lateritic",
+      "ph": "5.5 - 7.5",
+      "desc": "King of fruits thriving in hot frost-free climate with distinct dry spells for flowering."
+    },
+    "mothbeans": {
+      "season": "Kharif",
+      "water": "Very Low",
+      "soil": "Sandy/Arid desert soil",
+      "ph": "6.0 - 8.5",
+      "desc": "Extremely drought-resilient legume ideal for arid zones and soil moisture conservation."
+    },
+    "mungbean": {
+      "season": "Kharif/Zaid",
+      "water": "Low to Moderate",
+      "soil": "Sandy loam",
+      "ph": "6.2 - 7.2",
+      "desc": "Short-duration pulse suitable for multi-cropping and green manuring."
+    },
+    "muskmelon": {
+      "season": "Zaid (Summer)",
+      "water": "Moderate",
+      "soil": "Sandy river beds",
+      "ph": "6.0 - 7.0",
+      "desc": "Warm-season cucurbit flourishing in sandy loam with abundant sunshine and dry air."
+    },
+    "orange": {
+      "season": "Subtropical/Tropical",
+      "water": "Moderate",
+      "soil": "Deep, well-drained loam",
+      "ph": "5.5 - 7.0",
+      "desc": "Citrus cash crop preferring moderate temperatures, adequate potassium, and good drainage."
+    },
+    "papaya": {
+      "season": "All Year (Tropical)",
+      "water": "Moderate to High",
+      "soil": "Rich volcanic/alluvial",
+      "ph": "6.0 - 7.0",
+      "desc": "Rapidly fruiting tropical tree requiring warm temperatures and frost-free weather."
+    },
+    "pigeonpeas": {
+      "season": "Kharif",
+      "water": "Low to Moderate",
+      "soil": "Deep loam to black soil",
+      "ph": "6.5 - 7.5",
+      "desc": "Drought-tolerant pulse with deep taproots that break hard soil pans."
+    },
+    "pomegranate": {
+      "season": "Semi-arid",
+      "water": "Low to Moderate",
+      "soil": "Sandy loam to light black",
+      "ph": "6.5 - 7.5",
+      "desc": "Hardy fruit crop flourishing in hot dry summers and cool winters with low humidity."
+    },
+    "rice": {
+      "season": "Kharif (Monsoon)",
+      "water": "Very High",
+      "soil": "Heavy clayey or alluvial",
+      "ph": "5.5 - 7.0",
+      "desc": "Premier cereal staple requiring water inundation (200+ mm rainfall) and warm humidity."
+    },
+    "watermelon": {
+      "season": "Zaid (Summer)",
+      "water": "Moderate",
+      "soil": "Sandy loam",
+      "ph": "6.0 - 7.0",
+      "desc": "Warm season vine requiring high sunshine, warm soils, and moderate nitrogen."
+    }
+  }
+}
