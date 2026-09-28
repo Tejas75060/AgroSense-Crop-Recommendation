@@ -314,12 +314,11 @@ st.write("")
 # -------------------------------------------------------------
 # TABS SETUP
 # -------------------------------------------------------------
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4 = st.tabs([
     "🌱 Single Recommendation",
     "📂 Batch CSV Prediction",
     "📊 Exploratory Data Analysis",
-    "🔬 Model Benchmarking",
-    "📑 Project Report & Viva Guide"
+    "🔬 Model Benchmarking"
 ])
 
 # -------------------------------------------------------------
@@ -619,65 +618,7 @@ with tab4:
         if os.path.exists(dt_cm_path):
             st.image(dt_cm_path, use_container_width=True)
 
-# -------------------------------------------------------------
-# TAB 5: REPORT & VIVA GUIDE
-# -------------------------------------------------------------
-with tab5:
-    st.subheader("📑 Technical Report Summary & Viva Examination Guide")
-    st.markdown("""
-    ### **1. Executive Summary**
-    - **Problem Statement**: Group 15 was tasked with building an end-to-end multi-class classification model recommending optimal crops from 7 soil and climate inputs.
-    - **Self-Selected Project Title**: *AgroSense: An Intelligent Soil & Climate-Driven Precision Crop Recommendation System Using Ensemble Learning*.
-    - **Champion Model**: **Random Forest Classifier** achieved **99.55% test accuracy**, **99.55% weighted F1-score**, and **99.55% $\\pm$ 0.32% 5-fold cross-validation accuracy**.
-    - **Key Driver**: Annual Rainfall (23.0%) and Humidity (22.4%) represent nearly 45% of the total decision weight.
 
-    ---
-    ### **2. Complete Project Development Workflow**
-    ```
-    Problem Definition ➔ Dataset (2,200 samples) ➔ Data Understanding ➔ Data Cleaning (0 nulls, 0 dups)
-         ➔ Exploratory Data Analysis (6 EDA plots) ➔ Feature Engineering & Stratified 80/20 Split
-         ➔ Multi-Model Training (Random Forest, Decision Tree, Naive Bayes, SVM, KNN)
-         ➔ Evaluation (Accuracy, Precision, Recall, F1, Confusion Matrix, 5-Fold CV)
-         ➔ Feature Importance Analysis ➔ Model Persistence (joblib) ➔ Streamlit Web Deployment
-    ```
-
-    ---
-    ### **3. Viva Examination Frequently Asked Questions (Group 15 Guide)**
-    """)
-
-    with st.expander("Q1: Why did Random Forest outperform a single Decision Tree?"):
-        st.write("""
-        A single Decision Tree is prone to high variance and overfitting because it creates greedy splits that can memorize training idiosyncrasies. 
-        Random Forest employs **Bootstrap Aggregation (Bagging)** by training an ensemble of 100 diverse trees on random sub-samples and sub-features. 
-        Averaging predictions cancels out individual errors, reducing variance and raising accuracy from **97.95% to 99.55%**.
-        """)
-
-    with st.expander("Q2: How does Gini Impurity differ from Entropy?"):
-        st.write("""
-        Both measure node impurity:
-        - **Gini Impurity**: $Gini = 1 - \sum p_i^2$. Computationally faster because it avoids logarithmic calculations.
-        - **Entropy / Information Gain**: $Entropy = - \sum p_i \log_2(p_i)$.
-        In practice, both yield almost identical tree performance, but Gini is standard in `scikit-learn`.
-        """)
-
-    with st.expander("Q3: Why was Stratified Train-Test Split necessary?"):
-        st.write("""
-        The dataset contains 22 classes with exactly 100 observations each. A standard random split could introduce sampling bias by assigning unequal crop counts into train/test sets. 
-        **Stratified sampling (`stratify=y`)** guarantees each crop has exactly 80 training samples and 20 testing samples, preserving statistical balance.
-        """)
-
-    with st.expander("Q4: Do Tree-based models require feature scaling like StandardScaler?"):
-        st.write("""
-        No. Decision Trees and Random Forests are **scale-invariant** because their splitting rules evaluate thresholds monotonically on individual features independently ($x_i \le \theta$). 
-        However, for distance-based models (KNN, SVM), scaling is compulsory to prevent high-magnitude features (like rainfall: 20-300mm) from dominating small-magnitude features (like pH: 3.5-10.0).
-        """)
-
-    with st.expander("Q5: What are the main real-world limitations of this system?"):
-        st.write("""
-        1. **Fixed Class Space**: Limited to 22 crops; does not incorporate local micro-varieties.
-        2. **Single-Point Seasonal Averages**: Does not model intra-season weather anomalies (e.g., flash droughts, unseasonal hailstorms).
-        3. **Economic Factors**: Crop recommendation is agronomically viable but doesn't factor market prices, storage life, or farmer budget.
-        """)
 
 # -------------------------------------------------------------
 # FOOTER
